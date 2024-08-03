@@ -1,9 +1,12 @@
-import express, { Request, Response } from "express";
+import express from "express";
+import {
+  account,
+  accountExpenses,
+} from "../controllers/accountInformation.controller";
 
 const router = express.Router();
 
-router.get("/conta", (req: Request, res: Response) => {
-  res.json({ msg: "teste" });
-});
+router.get("/accountinfo", account);
+router.get("/accountinfo/expenses", accountExpenses);
 
 export default router;
