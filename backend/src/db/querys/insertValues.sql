@@ -22,6 +22,6 @@ INSERT INTO despesas_credito (
     descricao,
     id_despesa
 ) VALUES 
-	('2024-08-01', 'Amazon Store', 160.00, 'Fone Bluethoo a Prova de Água', 1);
+	('2024-08-01', 'Amazon Store', 345.70, 'Fone Bluethoo a Prova de Água', 2);
     
 TRUNCATE TABLE despesas_credito;
