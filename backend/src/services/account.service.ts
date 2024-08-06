@@ -1,4 +1,4 @@
-import { format, QueryResult } from "mysql2";
+import { QueryResult } from "mysql2";
 import pool from "../db/connection";
 import { formattedDate } from "../utils/formattedDate";
 
@@ -68,11 +68,11 @@ export async function addExpense(
 ): Promise<QueryResult> {
   const conn = await pool.getConnection();
 
-  const expenseIdMonth =
-    "SELECT DISTINTC d.idconta FROM despesas d, conta c WHERE MONTH(d.dt_despesa) = MONTH(c.dt_recebimento)";
+  const accountId =
+    "(SELECT DISTINCT d.idconta FROM despesas d, conta c WHERE MONTH(d.dt_despesa) = MONTH(c.dt_recebimento))";
 
   const details_data = await conn.query(
-    `INSERT INTO despesas(dt_despesa, despesa, valor_despesa, status_despesa, idconta) VALUES ("${formattedDate()}", "${expense}", ${expenseAmount}, ${expenseStatus}, ${expenseIdMonth})`
+    `INSERT INTO despesas(dt_despesa, despesa, valor_despesa, status_despesa, idconta) VALUES ("${formattedDate()}", "${expense}", ${expenseAmount}, ${expenseStatus}, ${accountId})`
   );
   const details = details_data[0];
 
