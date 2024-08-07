@@ -11,8 +11,6 @@ export async function accountDetails(): Promise<QueryResult> {
   );
   const details = details_data[0];
 
-  //   console.log("sem nada aqui", details);
-
   conn.release();
 
   return details;
@@ -69,10 +67,30 @@ export async function addExpense(
   const conn = await pool.getConnection();
 
   const accountId =
-    "(SELECT DISTINCT d.idconta FROM despesas d, conta c WHERE MONTH(d.dt_despesa) = MONTH(c.dt_recebimento))";
+    "(SELECT DISTINCT c.idconta FROM despesas d, conta c WHERE MONTH(c.dt_recebimento) = month(d.dt_despesa))";
 
   const details_data = await conn.query(
     `INSERT INTO despesas(dt_despesa, despesa, valor_despesa, status_despesa, idconta) VALUES ("${formattedDate()}", "${expense}", ${expenseAmount}, ${expenseStatus}, ${accountId})`
+  );
+  const details = details_data[0];
+
+  conn.release();
+
+  return details;
+}
+
+export async function addCreditExpense(
+  creditExpense: string,
+  creditExpenseAmount: number,
+  description: string
+): Promise<QueryResult> {
+  const conn = await pool.getConnection();
+
+  const expenseId =
+    "(SELECT DISTINCT d.id_despesa FROM despesas_credito dc, despesas d WHERE MONTH(dc.dt_despesa_credito) = MONTH(d.dt_despesa))";
+
+  const details_data = await conn.query(
+    `INSERT INTO despesas_credito(dt_despesa_credito, despesa_credito, valor, descricao, id_despesa) VALUES ("${formattedDate()}", "${creditExpense}", ${creditExpenseAmount}, "${description}", ${expenseId})`
   );
   const details = details_data[0];
 
