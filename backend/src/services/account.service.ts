@@ -16,7 +16,7 @@ export async function accountDetails(): Promise<QueryResult> {
   return details;
 }
 
-export async function expenses(): Promise<QueryResult> {
+export async function expensesDetails(): Promise<QueryResult> {
   const conn = await pool.getConnection();
 
   const details_data = await conn.query(
@@ -29,7 +29,7 @@ export async function expenses(): Promise<QueryResult> {
   return details;
 }
 
-export async function creditExpenses(): Promise<QueryResult> {
+export async function creditExpensesDetails(): Promise<QueryResult> {
   const conn = await pool.getConnection();
 
   const details_data = await conn.query(
@@ -66,8 +66,7 @@ export async function addExpense(
 ): Promise<QueryResult> {
   const conn = await pool.getConnection();
 
-  const accountId =
-    "(SELECT DISTINCT c.idconta FROM despesas d, conta c WHERE MONTH(c.dt_recebimento) = month(d.dt_despesa))";
+  const accountId = `(SELECT DISTINCT c.idconta FROM conta c WHERE c.dt_recebimento = "${formattedDate()}")`;
 
   const details_data = await conn.query(
     `INSERT INTO despesas(dt_despesa, despesa, valor_despesa, status_despesa, idconta) VALUES ("${formattedDate()}", "${expense}", ${expenseAmount}, ${expenseStatus}, ${accountId})`
@@ -86,8 +85,7 @@ export async function addCreditExpense(
 ): Promise<QueryResult> {
   const conn = await pool.getConnection();
 
-  const expenseId =
-    "(SELECT DISTINCT d.id_despesa FROM despesas_credito dc, despesas d WHERE MONTH(dc.dt_despesa_credito) = MONTH(d.dt_despesa))";
+  const expenseId = `(SELECT DISTINCT c.idconta FROM conta c WHERE c.dt_recebimento = "${formattedDate()}")`;
 
   const details_data = await conn.query(
     `INSERT INTO despesas_credito(dt_despesa_credito, despesa_credito, valor, descricao, id_despesa) VALUES ("${formattedDate()}", "${creditExpense}", ${creditExpenseAmount}, "${description}", ${expenseId})`

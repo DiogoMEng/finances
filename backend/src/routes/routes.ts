@@ -4,7 +4,12 @@ import {
   accountCreditExpenses,
   accountExpenses,
 } from "../controllers/accountInformation.controller";
-import { credit, expense, receipt } from "../controllers/accountMovement.controller";
+import {
+  credit,
+  expense,
+  receipt,
+} from "../controllers/accountMovement.controller";
+import { formattedDate } from "../utils/formattedDate";
 
 const router = express.Router();
 
