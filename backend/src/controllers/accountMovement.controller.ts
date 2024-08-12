@@ -3,13 +3,14 @@ import {
   addCreditExpense,
   addExpense,
   addReceipt,
+  deleteExpense,
 } from "../services/account.service";
 
 export async function receipt(req: Request, res: Response): Promise<void> {
-  const accountValue = req.body.accountValue;
-  const receiptStatus = req.body.receiptStatus;
+  const accountValue: number = req.body.accountValue;
+  const receiptStatus: boolean = req.body.receiptStatus;
 
-  const info = await addReceipt(accountValue, receiptStatus);
+  await addReceipt(accountValue, receiptStatus);
 
   res.json({
     msg: "Recebimento Realizado",
@@ -21,11 +22,11 @@ export async function receipt(req: Request, res: Response): Promise<void> {
 }
 
 export async function expense(req: Request, res: Response): Promise<void> {
-  const expense = req.body.expense;
-  const expenseAmount = req.body.expenseAmount;
-  const expenseStatus = req.body.expenseStatus;
+  const expense: string = req.body.expense;
+  const expenseAmount: number = req.body.expenseAmount;
+  const expenseStatus: boolean = req.body.expenseStatus;
 
-  const info = await addExpense(expense, expenseAmount, expenseStatus);
+  await addExpense(expense, expenseAmount, expenseStatus);
 
   res.json({
     msg: "Recebimento Realizado",
@@ -38,11 +39,11 @@ export async function expense(req: Request, res: Response): Promise<void> {
 }
 
 export async function credit(req: Request, res: Response): Promise<void> {
-  const creditExpense = req.body.creditExpense;
-  const creditExpenseAmount = req.body.creditExpenseAmount;
-  const description = req.body.description;
+  const creditExpense: string = req.body.creditExpense;
+  const creditExpenseAmount: number = req.body.creditExpenseAmount;
+  const description: string = req.body.description;
 
-  const info = await addCreditExpense(
+  await addCreditExpense(
     creditExpense,
     creditExpenseAmount,
     description
@@ -56,4 +57,15 @@ export async function credit(req: Request, res: Response): Promise<void> {
       description: description,
     },
   });
+}
+
+export async function deleteExpenseFromAccount(req: Request, res: Response): Promise<void> {
+  const idExpense: number = parseInt(req.params.idExpense);
+  const isCredit: boolean = req.body.isCredit;
+
+  await deleteExpense(idExpense, isCredit);
+
+  res.json({
+    msg: "Despesa Removida"
+  })
 }
