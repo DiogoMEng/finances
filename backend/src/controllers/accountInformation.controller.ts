@@ -15,10 +15,16 @@ export async function accountExpenses(
   req: Request,
   res: Response
 ): Promise<void> {
-  const infoExpenses = await expensesDetails();
-  const infoCredit = await creditExpensesDetails();
+  const info = await expensesDetails();
 
-  infoCredit.forEach(data => infoExpenses.push(data));
+  res.json(info);
+}
 
-  res.json(infoExpenses);
+export async function accountCreditExpenses(
+  req: Request,
+  res: Response
+): Promise<void> {
+  const info = await creditExpensesDetails();
+
+  res.json(info);
 }
