@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ExpensesProtocol } from "../interfaces/Account.protocol";
 import axios from "axios";
 import { formattedDate } from "../utils/formattedDate";
+import isCurrentMonth from "../utils/isCurrentMonth";
 
 function Expenses(): JSX.Element {
     const [expenses, setExpenses] = useState<ExpensesProtocol[] | null>(null);
@@ -13,6 +14,8 @@ function Expenses(): JSX.Element {
     }, []);
 
     if(!expenses) return null!;
+
+    if(isCurrentMonth(expenses[0].dt_despesa)) return null!;
 
     return (
         <>

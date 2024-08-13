@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AccountProtocol } from "../interfaces/Account.protocol";
 import axios from "axios";
 import { formattedDate } from "../utils/formattedDate";
+import isCurrentMonth from "../utils/isCurrentMonth";
 
 function Account (): JSX.Element {
     const [account, setAccount] = useState<AccountProtocol | null>(null);
@@ -13,6 +14,8 @@ function Account (): JSX.Element {
     }, []);
 
     if(!account) return null!;
+
+    if(isCurrentMonth(account.dt_recebimento)) return null!;
 
     return (
         <>
