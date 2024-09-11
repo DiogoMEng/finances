@@ -15,8 +15,6 @@ function Expenses(): JSX.Element {
 
     if(!expenses) return null!;
 
-    if(isCurrentMonth(expenses[0].dt_despesa)) return null!;
-
     return (
         <>
             {expenses.map((expense, index) => (

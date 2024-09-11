@@ -15,8 +15,6 @@ function Credit(): JSX.Element {
 
     if(!credits) return null!;
 
-    if(isCurrentMonth(credits[0].dt_despesa_credito)) return null!;
-
     return (
         <>
             {credits.map((credit, index) => (

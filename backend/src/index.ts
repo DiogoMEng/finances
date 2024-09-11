@@ -11,5 +11,6 @@ app.use(express.json());
 app.use(router);
 
 app.listen("3000", () => {
-  console.log("servidor rodando");
+  const date = new Date();
+  console.log("server running.\n" + date);
 });
