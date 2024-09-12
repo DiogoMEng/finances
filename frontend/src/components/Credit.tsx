@@ -16,16 +16,22 @@ function Credit(): JSX.Element {
     if(!credits) return null!;
 
     return (
-        <>
+        <table className="max-h-72 overflow-y-auto m-auto border-collapse">
+            <tr className="border-b-2">
+                <th className="w-40">Valor</th>
+                <th className="w-40">Despesa</th>
+                <th className="w-40">Descrição de Gasto</th>
+                <th className="w-40">Data de Gasto</th>
+            </tr>
             {credits.map((credit, index) => (
-                <ul key={index}>
-                    <li>Valor: R${credit.valor_credito}</li>
-                    <li>Despesa: {credit.despesa_credito}</li>
-                    <li>Descrição de gasto: {credit.descricao}</li>
-                    <li>Data de Gasto: {formattedDate(credit.dt_despesa_credito)}</li>
-                </ul>
+                <tr className="border-b-[1px] text-center even:bg-[#373739]" key={index}>
+                    <td>R${credit.valor_credito}</td>
+                    <td>{credit.despesa_credito}</td>
+                    <td>{credit.descricao}</td>
+                    <td>{formattedDate(credit.dt_despesa_credito)}</td>
+                </tr>
             ))}
-        </>
+        </table>
     )
 }
 

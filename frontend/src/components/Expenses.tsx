@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { ExpensesProtocol } from "../interfaces/Account.protocol";
 import axios from "axios";
 import { formattedDate } from "../utils/formattedDate";
-import isCurrentMonth from "../utils/isCurrentMonth";
 
 function Expenses(): JSX.Element {
     const [expenses, setExpenses] = useState<ExpensesProtocol[] | null>(null);
@@ -16,16 +15,22 @@ function Expenses(): JSX.Element {
     if(!expenses) return null!;
 
     return (
-        <>
+        <table className="max-h-72 overflow-y-auto m-auto border-collapse">
+            <tr className="border-b-2">
+                <th className="w-40">Valor</th>
+                <th className="w-40">Despesa</th>
+                <th className="w-40">Status</th>
+                <th className="w-40">Data de Compra</th>
+            </tr>
             {expenses.map((expense, index) => (
-                <ul key={index}>
-                    <li>Valor: R${expense.valor_despesa}</li>
-                    <li>Despesa: {expense.despesa}</li>
-                    <li>Status de Pagamento: {expense.status_despesa != false ? "Pago" : "Pendente"}</li>
-                    <li>Data de Criação: {formattedDate(expense.dt_despesa)}</li>
-                </ul>
+                <tr className="border-b-[1px] text-center even:bg-[#373739]" key={index}>
+                    <td>R${expense.valor_despesa}</td>
+                    <td>{expense.despesa}</td>
+                    <td>{expense.status_despesa != false ? "Pago" : "Pendente"}</td>
+                    <td>{formattedDate(expense.dt_despesa)}</td>
+                </tr>
             ))}
-        </>
+        </table>
     )
 }
 

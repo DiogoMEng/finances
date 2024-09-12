@@ -18,15 +18,20 @@ function Account (): JSX.Element {
     console.log(accounts);
 
     return (
-        <>
+        <table className="max-h-72 overflow-y-auto m-auto border-collapse">
+            <tr className="border-b-2">
+                <th className="w-40">Valor</th>
+                <th className="w-40">Status</th>
+                <th className="w-40">Data de Pagamento</th>
+            </tr>
             {accounts.map((account, index) => (
-                <ul key={index}>
-                    <li>Valor da Conta: R${account.valor_conta}</li>
-                    <li>Status de Pagamento: R${account.status_recebimento != false ? "Pago" : "Pendente"}</li>
-                    <li>Data de Recebimento: {formattedDate(account.dt_recebimento)}</li>
-                </ul>
+                <tr className="border-b-[1px] text-center even:bg-[#373739]" key={index}>
+                    <td>R${account.valor_conta}</td>
+                    <td>{account.status_recebimento != false ? "Pago" : "Pendente"}</td>
+                    <td>{formattedDate(account.dt_recebimento)}</td>
+                </tr>
             ))}
-        </>
+        </table>
     )
 }
 
