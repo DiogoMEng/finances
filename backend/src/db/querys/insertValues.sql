@@ -4,10 +4,16 @@ INSERT INTO
         valor_conta,
         status_recebimento
     )
-VALUES ('2024-08-01', 1034.45, TRUE),
-    ('2024-09-10', 750.60, FALSE),
-    ('2024-07-15', 1280.00, TRUE),
-    ('2024-09-01', 540.75, FALSE);
+VALUES ('2024-09-30', 985.40, TRUE),
+    ('2024-08-18', 760.00, FALSE),
+    ('2024-12-01', 1120.75, TRUE),
+    ('2024-07-10', 540.00, TRUE),
+    ('2024-10-20', 1345.80, FALSE),
+    ('2024-11-15', 455.60, TRUE),
+    ('2024-09-05', 675.30, FALSE),
+    ('2024-08-25', 890.95, TRUE),
+    ('2024-12-10', 1025.20, TRUE),
+    ('2024-07-05', 600.50, TRUE);
 
 INSERT INTO
     despesas (
@@ -18,55 +24,90 @@ INSERT INTO
         idconta
     )
 VALUES (
-        '2024-08-14',
-        'Passeio Shopping',
-        120.35,
-        FALSE,
-        1
-    ),
-    (
-        '2024-08-15',
-        'Supermercado',
-        250.50,
+        '2024-09-01',
+        'Posto de Gasolina',
+        180.75,
         TRUE,
-        2
+        4
     ),
     (
-        '2024-08-16',
-        'Restaurante',
-        75.80,
+        '2024-09-05',
+        'Farmácia',
+        45.60,
         FALSE,
-        3
+        5
+    ),
+    (
+        '2024-09-07',
+        'Padaria',
+        35.20,
+        TRUE,
+        6
+    ),
+    (
+        '2024-09-10',
+        'Cinema',
+        60.50,
+        FALSE,
+        7
+    ),
+    (
+        '2024-09-12',
+        'Academia',
+        150.00,
+        TRUE,
+        8
     );
 
 INSERT INTO
     despesas_credito (
         dt_despesa_credito,
         despesa_credito,
-        valor,
+        valor_credito,
         descricao,
         idconta
     )
 VALUES (
-        '2024-08-01',
-        'Amazon Store',
-        345.70,
-        'Fone Bluetooth à Prova de Água',
-        2
+        '2024-08-12',
+        'Mercado Livre',
+        199.99,
+        'Relógio Inteligente',
+        4
     ),
     (
-        '2024-08-05',
-        'Apple Store',
-        999.99,
-        'iPhone 14 Pro',
-        3
+        '2024-08-20',
+        'AliExpress',
+        45.60,
+        'Cabo de Carregamento',
+        5
     ),
     (
-        '2024-08-10',
-        'Steam',
-        59.90,
-        'Jogo de Aventura',
-        1
+        '2024-08-25',
+        'Microsoft Store',
+        79.99,
+        'Assinatura Office 365',
+        6
+    ),
+    (
+        '2024-09-01',
+        'Google Play',
+        12.50,
+        'Aplicativo de Produtividade',
+        7
+    ),
+    (
+        '2024-09-05',
+        'eBay',
+        350.00,
+        'Câmera de Segurança',
+        8
+    ),
+    (
+        '2024-09-07',
+        'Shopee',
+        29.90,
+        'Capa para Celular',
+        9
     );
 
 TRUNCATE TABLE despesas_credito;

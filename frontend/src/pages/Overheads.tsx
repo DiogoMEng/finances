@@ -7,11 +7,11 @@ function Overheads(): JSX.Element {
             <h1 className="bg-[#020202] w-60 m-auto mb-2 p-1 text-center text-2xl font-bold border-[1px] border-[#c9b977] rounded-md">Despesas</h1>
             <div className="grid grid-cols-2 gap-4">
                 <div className="bg-[#020202] p-2 rounded-md group">
-                    <h2 className="w-52 text-xl mb-3 border-b-2 border-white duration-75 group-hover:font-bold group-hover:w-full group-hover:text-center">Realizadas no Débito</h2>
+                    <h2 className="w-52 text-xl mb-3 border-b-2 border-white duration-75 group-hover:w-full group-hover:border-[#ecdda2] group-hover:text-center group-hover:text-[#ecdda2] group-hover:font-bold">Realizadas no Débito</h2>
                     <Expenses />
                 </div>
                 <div className="bg-[#020202] p-2 rounded-md group">
-                    <h1 className="w-52 text-xl mb-3 border-b-2 border-white duration-75 group-hover:font-bold group-hover:w-full group-hover:text-center">Realizadas no Crédito</h1>
+                    <h1 className="w-52 text-xl mb-3 border-b-2 border-white duration-75 group-hover:w-full group-hover:border-[#ecdda2] group-hover:text-center group-hover:text-[#ecdda2] group-hover:font-bold">Realizadas no Crédito</h1>
                     <Credit />
                 </div>
             </div>

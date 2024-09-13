@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { ExpensesCreditProtocol } from "../interfaces/Account.protocol";
+import { ExpensesCreditProtocol } from "../interfaces/Balance.protocol";
 import axios from "axios";
 import { formattedDate } from "../utils/formattedDate";
-import isCurrentMonth from "../utils/isCurrentMonth";
 
 function Credit(): JSX.Element {
     const [credits, setCredit] = useState<ExpensesCreditProtocol[] | null>(null);
@@ -16,22 +15,24 @@ function Credit(): JSX.Element {
     if(!credits) return null!;
 
     return (
-        <table className="max-h-72 overflow-y-auto m-auto border-collapse">
-            <tr className="border-b-2">
-                <th className="w-40">Valor</th>
-                <th className="w-40">Despesa</th>
-                <th className="w-40">Descrição de Gasto</th>
-                <th className="w-40">Data de Gasto</th>
-            </tr>
-            {credits.map((credit, index) => (
-                <tr className="border-b-[1px] text-center even:bg-[#373739]" key={index}>
-                    <td>R${credit.valor_credito}</td>
-                    <td>{credit.despesa_credito}</td>
-                    <td>{credit.descricao}</td>
-                    <td>{formattedDate(credit.dt_despesa_credito)}</td>
+        <div className="max-h-72 overflow-y-auto">
+            <table className="w-10/12 m-auto border-collapse">
+                <tr className="border-b-2">
+                    <th className="w-20">Valor</th>
+                    <th className="w-20">Despesa</th>
+                    <th className="w-44">Descrição de Gasto</th>
+                    <th className="w-20">Data de Gasto</th>
                 </tr>
-            ))}
-        </table>
+                {credits.map((credit, index) => (
+                    <tr className="border-b-[1px] text-center even:bg-[#373739]" key={index}>
+                        <td className="duration-300 hover:py-2">R${credit.valor_credito}</td>
+                        <td className="duration-300 hover:py-2">{credit.despesa_credito}</td>
+                        <td className="duration-300 hover:py-2">{credit.descricao}</td>
+                        <td className="duration-300 hover:py-2">{formattedDate(credit.dt_despesa_credito)}</td>
+                    </tr>
+                ))}
+            </table>
+        </div>
     )
 }
 

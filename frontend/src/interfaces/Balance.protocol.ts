@@ -1,4 +1,4 @@
-export interface AccountProtocol {
+export interface BalanceProtocol {
     valor_conta: number,
     status_recebimento: boolean,
     dt_recebimento: string
