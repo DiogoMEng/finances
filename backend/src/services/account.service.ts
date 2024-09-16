@@ -5,7 +5,7 @@ import { formattedDate } from "../utils/formattedDate";
 
 
 // ACCOUNT VIEWS
-export async function accountDetails(): Promise<RowDataPacket[]> {
+export async function balanceDetails(): Promise<RowDataPacket[]> {
   const conn = await pool.getConnection();
 
   const details_data: RowDataPacket[] = await conn.query<RowDataPacket[]>(
@@ -43,7 +43,7 @@ export async function creditExpensesDetails(): Promise<RowDataPacket[]> {
 
 
 // ACCOUNT MOVEMENTS - ENTRIES
-export async function addReceipt(
+export async function addBalance(
   accountValue: number,
   receiptStatus: boolean
 ): Promise<void> {
@@ -63,7 +63,7 @@ export async function addExpense(
 ): Promise<void> {
   const conn = await pool.getConnection();
 
-  const accountId = `(SELECT DISTINCT c.idconta FROM conta c WHERE MONTH(c.dt_recebimento) = MONTH("${formattedDate()}"))`;
+  const accountId = `(SELECT DISTINCT c.idconta FROM conta c WHERE YEAR(c.dt_recebimento) = YEAR(${formattedDate()}) AND MONTH(c.dt_recebimento) = MONTH("${formattedDate()}"))`;
 
   const data: RowDataPacket[] = await conn.query<RowDataPacket[]>(
     `INSERT INTO despesas(dt_despesa, despesa, valor_despesa, status_despesa, idconta) VALUES ("${formattedDate()}", "${expense}", ${expenseAmount}, ${expenseStatus}, ${accountId})`
@@ -72,14 +72,14 @@ export async function addExpense(
   conn.release();
 }
 
-export async function addCreditExpense(
+export async function addCredit(
   creditExpense: string,
   creditExpenseAmount: number,
   description: string
 ): Promise<void> {
   const conn = await pool.getConnection();
 
-  const accountId = `(SELECT DISTINCT c.idconta FROM conta c WHERE MONTH(c.dt_recebimento) = MONTH("${formattedDate()}"))`;
+  const accountId = `(SELECT DISTINCT c.idconta FROM conta c WHERE YEAR(c.dt_recebimento) = YEAR(${formattedDate()}) AND MONTH(c.dt_recebimento) = MONTH("${formattedDate()}"))`;
   
   const data: RowDataPacket[] = await conn.query<RowDataPacket[]>(
     `INSERT INTO despesas_credito(dt_despesa_credito, despesa_credito, valor_credito, descricao, idconta) VALUES ("${formattedDate()}", "${creditExpense}", ${creditExpenseAmount}, "${description}", ${accountId})`

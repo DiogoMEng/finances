@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 import {
-  accountDetails,
+  balanceDetails,
   creditExpensesDetails,
   expensesDetails,
 } from "../services/account.service";
 
 export async function account(req: Request, res: Response): Promise<void> {
-  const info = await accountDetails();
+  const info = await balanceDetails();
 
   res.json(info);
 }

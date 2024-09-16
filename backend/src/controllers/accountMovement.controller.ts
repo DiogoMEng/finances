@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import {
-  addCreditExpense,
+  addCredit,
   addExpense,
-  addReceipt,
+  addBalance,
   deleteExpense,
 } from "../services/account.service";
 
@@ -10,7 +10,7 @@ export async function receipt(req: Request, res: Response): Promise<void> {
   const accountValue: number = req.body.accountValue;
   const receiptStatus: boolean = req.body.receiptStatus;
 
-  await addReceipt(accountValue, receiptStatus);
+  await addBalance(accountValue, receiptStatus);
 
   res.json({
     msg: "Recebimento Realizado",
@@ -43,7 +43,7 @@ export async function credit(req: Request, res: Response): Promise<void> {
   const creditExpenseAmount: number = req.body.creditExpenseAmount;
   const description: string = req.body.description;
 
-  await addCreditExpense(
+  await addCredit(
     creditExpense,
     creditExpenseAmount,
     description

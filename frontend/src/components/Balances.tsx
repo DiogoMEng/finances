@@ -8,7 +8,7 @@ function Balances (): JSX.Element {
 
     
     useEffect(() => {
-        axios.get("http://localhost:3000/account/").then((res) => {
+        axios.get("http://localhost:3000/balances/").then((res) => {
             setAccounts(res.data);
         });
     }, []);

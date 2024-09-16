@@ -14,16 +14,16 @@ import {
 const router = express.Router();
 
 // VIEWS
-router.get("/account", account);
-router.get("/account/expenses", accountExpenses);
-router.get("/account/expenses/credit", accountCreditExpenses);
+router.get("/balances", account);
+router.get("/balances/expenses", accountExpenses);
+router.get("/balances/credit", accountCreditExpenses);
 
 // ENTRIES
-router.post("/account", receipt);
-router.post("/account/expense", expense);
-router.post("/account/expense/credit", credit);
+router.post("/balance", receipt);
+router.post("/balance/expense", expense);
+router.post("/balance/credit", credit);
 
 // EXITS
-router.delete("/account/expense/:idExpense", deleteExpenseFromAccount);
+router.delete("/balance/expense/:idExpense", deleteExpenseFromAccount);
 
 export default router;

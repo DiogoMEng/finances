@@ -7,7 +7,7 @@ function Expenses(): JSX.Element {
     const [expenses, setExpenses] = useState<ExpensesProtocol[] | null>(null);
 
     useEffect(() => {
-        axios.get("http://localhost:3000/account/expenses").then((res) => {
+        axios.get("http://localhost:3000/balances/expenses").then((res) => {
             setExpenses(res.data);
         });
     }, []);
@@ -16,7 +16,7 @@ function Expenses(): JSX.Element {
 
     return (
         <div className="max-h-72 overflow-y-auto">
-            <table className="w-10/12 m-auto border-collapse">
+            <table className="w-11/12 m-auto border-collapse">
                 <tr className="border-b-2">
                     <th className="w-40">Valor</th>
                     <th className="w-40">Despesa</th>

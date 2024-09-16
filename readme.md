@@ -7,15 +7,22 @@ aplicação web de gestão financeira proporciona uma maneira simples e eficient
 ## 🛠️ Funcionalidades
 
 1. Inserção de dados financeiros.
+   - (**POST**)`/balances` - permite inserir um saldo do usuário.
+   - (**POST**)`/balances/expenses` - permite inserir uma despesa em dinheiro/débito do usuário.
+   - (**POST**)`/balances/credit` - permite inserir uma despesa de crédito do usuário.
 2. Visualização de dados do usuário.
+   - (**GET**)`/balances` - retorna todos os saldos de entrada do usuário.
+   - (**GET**)`/balances/expenses` - retorna as despesas realizadas em dinheiro/débito.
+   - (**GET**)`/balances/credit` - retorna as despesas realizadas no crédito.
 
 ## 💻 Tecnologias Utilizadas
 
-1. JavaScript.
+1. TypeScript.
 2. NodeJs.
    - Express.
 3. MySQL.
-4. HTML e CSS.
+4. React
+5. Tailwindcss.
 
 ## 🔰 Inicialização
 
