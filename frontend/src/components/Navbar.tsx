@@ -2,7 +2,7 @@ import iconFinances from "../assets/img/icon-finance.png"
 
 const NavBar = (): JSX.Element => {
     return (
-        <nav className="flex bg-gradient-to-r bg-[#373739] items-center justify-between px-5 text-white">
+        <nav className="flex bg-[#373739] items-center justify-between px-5 text-white">
             <div className="flex items-center text-3xl"><img src={iconFinances} className="py-4 mr-3" alt="icon-finances" width={70} height={70}/>Finances</div>
 
             <div>
@@ -20,4 +20,4 @@ const NavBar = (): JSX.Element => {
     );
 };
 
-export { NavBar };
+export default NavBar;
