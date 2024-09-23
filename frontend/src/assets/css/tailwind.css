@@ -554,12 +554,21 @@ video {
   --tw-contain-style:  ;
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
 .absolute {
   position: absolute;
 }
 
 .relative {
   position: relative;
+}
+
+.inset-x-px {
+  left: 1px;
+  right: 1px;
 }
 
 .m-auto {
@@ -610,6 +619,22 @@ video {
 
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
+.mt-7 {
+  margin-top: 1.75rem;
 }
 
 .flex {
@@ -694,6 +719,10 @@ video {
 
 .border-collapse {
   border-collapse: collapse;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .items-center {
@@ -806,6 +835,15 @@ video {
   padding-bottom: 1rem;
 }
 
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -830,6 +868,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -844,12 +887,54 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.placeholder-transparent::-moz-placeholder {
+  color: transparent;
+}
+
+.placeholder-transparent::placeholder {
+  color: transparent;
+}
+
+.placeholder-opacity-0::-moz-placeholder {
+  --tw-placeholder-opacity: 0;
+}
+
+.placeholder-opacity-0::placeholder {
+  --tw-placeholder-opacity: 0;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .duration-300 {
   transition-duration: 300ms;
 }
 
 .duration-75 {
   transition-duration: 75ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+.duration-1000 {
+  transition-duration: 1000ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ease-linear {
+  transition-timing-function: linear;
 }
 
 body {
@@ -869,6 +954,10 @@ body {
 .even\:bg-\[\#373739\]:nth-child(even) {
   --tw-bg-opacity: 1;
   background-color: rgb(55 55 57 / var(--tw-bg-opacity));
+}
+
+.focus-within\:block:focus-within {
+  display: block;
 }
 
 .hover\:border-b-2:hover {
@@ -903,6 +992,10 @@ body {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.group:hover .group-hover\:block {
+  display: block;
+}
+
 .group:hover .group-hover\:w-full {
   width: 100%;
 }
@@ -923,6 +1016,129 @@ body {
 .group:hover .group-hover\:text-\[\#ecdda2\] {
   --tw-text-opacity: 1;
   color: rgb(236 221 162 / var(--tw-text-opacity));
+}
+
+.group:focus .group-focus\:block {
+  display: block;
+}
+
+.peer:focus ~ .peer-focus\:mt-5 {
+  margin-top: 1.25rem;
+}
+
+.peer:focus ~ .peer-focus\:block {
+  display: block;
+}
+
+.peer:focus ~ .peer-focus\:flex {
+  display: flex;
+}
+
+.peer:focus ~ .peer-focus\:translate-y-1 {
+  --tw-translate-y: 0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.peer:focus ~ .peer-focus\:translate-y-\[-20\] {
+  --tw-translate-y: -20;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.peer:focus ~ .peer-focus\:translate-y-\[-20px\] {
+  --tw-translate-y: -20px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.peer:focus ~ .peer-focus\:translate-y-\[-40px\] {
+  --tw-translate-y: -40px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.peer:focus ~ .peer-focus\:translate-y-\[-60px\] {
+  --tw-translate-y: -60px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.peer:focus ~ .peer-focus\:pt-5 {
+  padding-top: 1.25rem;
+}
+
+.group:has(:focus) .group-has-\[\:focus\]\:relative {
+  position: relative;
+}
+
+.group:has(:focus) .group-has-\[\:focus\]\:block {
+  display: block;
+}
+
+.group:has(:focus) .group-has-\[\:focus\]\:flex {
+  display: flex;
+}
+
+.group:has(:focus) .group-has-\[\:focus\]\:translate-y-\[-20px\] {
+  --tw-translate-y: -20px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:has(:focus) .group-has-\[\:focus\]\:translate-y-\[-25px\] {
+  --tw-translate-y: -25px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:has(:focus) .group-has-\[\:focus\]\:translate-y-\[-30px\] {
+  --tw-translate-y: -30px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:has(:focus) .group-has-\[\:focus\]\:translate-y-\[-28px\] {
+  --tw-translate-y: -28px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:has(:focus) .group-has-\[\:focus\]\:text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.group:has(:focus) .group-has-\[\:focus\]\:font-bold {
+  font-weight: 700;
+}
+
+.group:has(:focus) .group-has-\[\:focus\]\:text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.group:has(:focus) .group-has-\[\:focus\]\:placeholder-transparent::-moz-placeholder {
+  color: transparent;
+}
+
+.group:has(:focus) .group-has-\[\:focus\]\:placeholder-transparent::placeholder {
+  color: transparent;
+}
+
+.group:has(:focus) .group-has-\[\:focus\]\:placeholder-opacity-0::-moz-placeholder {
+  --tw-placeholder-opacity: 0;
+}
+
+.group:has(:focus) .group-has-\[\:focus\]\:placeholder-opacity-0::placeholder {
+  --tw-placeholder-opacity: 0;
+}
+
+.group:has(label) .group-has-\[label\]\:placeholder-opacity-0::-moz-placeholder {
+  --tw-placeholder-opacity: 0;
+}
+
+.group:has(label) .group-has-\[label\]\:placeholder-opacity-0::placeholder {
+  --tw-placeholder-opacity: 0;
+}
+
+.group:has(:focus) .group-has-\[\:focus\]\:duration-100 {
+  transition-duration: 100ms;
+}
+
+.group:has(:focus) .group-has-\[\:focus\]\:duration-500 {
+  transition-duration: 500ms;
 }
 
 @media not all and (min-width: 768px) {
