@@ -8,7 +8,9 @@ import {
 
 export async function receipt(req: Request, res: Response): Promise<void> {
   const accountValue: number = req.body.accountValue;
-  const receiptStatus: boolean = req.body.receiptStatus;
+  const receiptStatus: boolean = req.body.receiptStatus === "on" ? true : false;
+
+  console.log(accountValue, receiptStatus);
 
   await addBalance(accountValue, receiptStatus);
 
@@ -24,7 +26,7 @@ export async function receipt(req: Request, res: Response): Promise<void> {
 export async function expense(req: Request, res: Response): Promise<void> {
   const expense: string = req.body.expense;
   const expenseAmount: number = req.body.expenseAmount;
-  const expenseStatus: boolean = req.body.expenseStatus;
+  const expenseStatus: boolean = req.body.expenseStatus === "on" ? true : false;
 
   await addExpense(expense, expenseAmount, expenseStatus);
 

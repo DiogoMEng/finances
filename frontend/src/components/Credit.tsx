@@ -17,20 +17,24 @@ function Credit(): JSX.Element {
     return (
         <div className="max-h-72 overflow-y-auto">
             <table className="w-11/12 m-auto border-collapse">
-                <tr className="border-b-2">
-                    <th className="w-20">Valor</th>
-                    <th className="w-20">Despesa</th>
-                    <th className="w-44">Descrição de Gasto</th>
-                    <th className="w-20">Data de Gasto</th>
-                </tr>
-                {credits.map((credit, index) => (
-                    <tr className="border-b-[1px] text-center even:bg-[#373739]" key={index}>
-                        <td className="duration-300 hover:py-2">R${credit.valor_credito}</td>
-                        <td className="duration-300 hover:py-2">{credit.despesa_credito}</td>
-                        <td className="duration-300 hover:py-2">{credit.descricao}</td>
-                        <td className="duration-300 hover:py-2">{formattedDate(credit.dt_despesa_credito)}</td>
+                <thead>
+                    <tr className="border-b-2">
+                        <th className="w-20">Valor</th>
+                        <th className="w-20">Despesa</th>
+                        <th className="w-44">Descrição de Gasto</th>
+                        <th className="w-20">Data de Gasto</th>
                     </tr>
-                ))}
+                </thead>
+                <tbody>
+                    {credits.map((credit, index) => (
+                        <tr className="border-b-[1px] text-center even:bg-[#373739]" key={index}>
+                            <td className="duration-300 hover:py-2">R${credit.valor_credito}</td>
+                            <td className="duration-300 hover:py-2">{credit.despesa_credito}</td>
+                            <td className="duration-300 hover:py-2">{credit.descricao}</td>
+                            <td className="duration-300 hover:py-2">{formattedDate(credit.dt_despesa_credito)}</td>
+                        </tr>
+                    ))}
+                </tbody>
             </table>
         </div>
     )

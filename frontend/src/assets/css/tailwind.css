@@ -612,16 +612,16 @@ video {
   margin-top: 0.5rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .mt-7 {
   margin-top: 1.75rem;
 }
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.block {
-  display: block;
 }
 
 .flex {
@@ -638,6 +638,10 @@ video {
 
 .h-4 {
   height: 1rem;
+}
+
+.max-h-14 {
+  max-height: 3.5rem;
 }
 
 .max-h-72 {
@@ -670,6 +674,10 @@ video {
 
 .w-20 {
   width: 5rem;
+}
+
+.w-3\/4 {
+  width: 75%;
 }
 
 .w-3\/5 {
@@ -870,7 +878,7 @@ video {
 }
 
 body {
-  background-color: #c9b977;
+  background-color: #19191a;
 }
 
 .placeholder\:text-gray-400::-moz-placeholder {
@@ -886,16 +894,6 @@ body {
 .even\:bg-\[\#373739\]:nth-child(even) {
   --tw-bg-opacity: 1;
   background-color: rgb(55 55 57 / var(--tw-bg-opacity));
-}
-
-.valid\:translate-y-\[-28px\]:valid {
-  --tw-translate-y: -28px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.valid\:text-white:valid {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:border-b-2:hover {
@@ -952,42 +950,12 @@ body {
   color: rgb(236 221 162 / var(--tw-text-opacity));
 }
 
-.has-\[\:focus\]\:text-white:has(:focus) {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .group:has(:focus) .group-has-\[\:focus\]\:translate-y-\[-28px\] {
   --tw-translate-y: -28px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group:has(:valid) .group-has-\[\:valid\]\:translate-y-\[-28px\] {
-  --tw-translate-y: -28px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:has(:invalid) .group-has-\[\:invalid\]\:translate-y-\[-28px\] {
-  --tw-translate-y: -28px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:has(valid:focus) .group-has-\[valid\:focus\]\:translate-y-\[-28px\] {
-  --tw-translate-y: -28px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:has(:valid:focus) .group-has-\[\:valid\:focus\]\:translate-y-\[-28px\] {
-  --tw-translate-y: -28px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:has(:focus:valid) .group-has-\[\:focus\:valid\]\:translate-y-\[-28px\] {
-  --tw-translate-y: -28px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:has(focus) .group-has-\[focus\]\:translate-y-\[-28px\] {
   --tw-translate-y: -28px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1002,67 +970,12 @@ body {
   line-height: 1.25rem;
 }
 
-.group:has(:invalid) .group-has-\[\:invalid\]\:text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.group:has(:focus:valid) .group-has-\[\:focus\:valid\]\:text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.group:has(:valid:focus) .group-has-\[\:valid\:focus\]\:text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .group:has(:focus) .group-has-\[\:focus\]\:text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .group:has(:valid) .group-has-\[\:valid\]\:text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.group:has(:invalid) .group-has-\[\:invalid\]\:text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.group:has(:focus:valid) .group-has-\[\:focus\:valid\]\:text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.group:has(:valid:focus) .group-has-\[\:valid\:focus\]\:text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.group:has(:focus) .valid\:group-has-\[\:focus\]\:translate-y-\[-28px\]:valid {
-  --tw-translate-y: -28px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:has(:focus) .group-has-\[\:focus\]\:valid\:translate-y-\[-28px\]:valid {
-  --tw-translate-y: -28px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:has(:focus) .group-has-\[\:focus\]\:valid\:text-white:valid {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.group:has(:focus) .valid\:group-has-\[\:focus\]\:text-white:valid {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.group:has(:focus) .group-has-\[\:focus\]\:invalid\:text-white:invalid {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
