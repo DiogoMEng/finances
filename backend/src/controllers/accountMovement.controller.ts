@@ -10,8 +10,6 @@ export async function receipt(req: Request, res: Response): Promise<void> {
   const accountValue: number = req.body.accountValue;
   const receiptStatus: boolean = req.body.receiptStatus === "on" ? true : false;
 
-  console.log(accountValue, receiptStatus);
-
   await addBalance(accountValue, receiptStatus);
 
   res.json({

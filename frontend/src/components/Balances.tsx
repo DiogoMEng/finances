@@ -19,7 +19,7 @@ function Balances (): JSX.Element {
 
     return (
         <div className="flex max-h-72 justify-center rounded-md overflow-y-auto scroolbar-gutter-stable">
-            <table className="w-10/12 border-collapse">
+            <table className="w-10/12 border-collapse max-md:w-full">
                 <thead>
                     <tr className="border-b-2">
                         <th className="w-40">Valor</th>

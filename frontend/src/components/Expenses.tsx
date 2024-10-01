@@ -19,9 +19,9 @@ function Expenses(): JSX.Element {
             <table className="w-11/12 m-auto border-collapse">
                 <thead>
                     <tr className="border-b-2">
-                        <th className="w-40">Valor</th>
+                        <th className="w-40 max-md:w-32">Valor</th>
                         <th className="w-40">Despesa</th>
-                        <th className="w-40">Status</th>
+                        <th className="w-40 max-md:w-32">Status</th>
                         <th className="w-40">Data de Compra</th>
                     </tr>
                 </thead>

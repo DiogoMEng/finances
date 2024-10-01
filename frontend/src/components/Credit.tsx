@@ -21,7 +21,7 @@ function Credit(): JSX.Element {
                     <tr className="border-b-2">
                         <th className="w-20">Valor</th>
                         <th className="w-20">Despesa</th>
-                        <th className="w-44">Descrição de Gasto</th>
+                        <th className="w-44 max-md:w-20">Descrição de Gasto</th>
                         <th className="w-20">Data de Gasto</th>
                     </tr>
                 </thead>
